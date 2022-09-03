@@ -1,0 +1,14 @@
+@startuml
+class org.revature.service.EmployeeService {
++ Employee insertEmployee(Employee)
++ Employee getEmployee(String)
+}
+class org.revature.service.TicketService {
++ Ticket insertTicket(Ticket)
++ List<Ticket> getById(int)
++ Ticket getTicketById(int)
++ List<Ticket> getTicketByStatus(String,int)
++ List<Ticket> viewAll()
++ Ticket updateTicket(Ticket)
+}
+@enduml

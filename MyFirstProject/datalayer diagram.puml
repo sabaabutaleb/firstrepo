@@ -1,0 +1,42 @@
+@startuml
+class org.revature.data.DaoFactory {
+- {static} EmployeeDao employeeDao
+- {static} TicketDao ticketDao
++ {static} EmployeeDao getEmployeeDao()
++ {static} TicketDao getTicketDao()
+}
+class org.revature.data.ConnectionFactory {
+- {static} Connection connection
+~ {static} Connection getConnection()
+}
+interface org.revature.data.EmployeeDao {
++ Employee insertEmployee(Employee)
++ Employee getEmployee(String)
+}
+class org.revature.data.EmployeeDaoImpl {
+~ Connection connection
++ Employee insertEmployee(Employee)
++ Employee getEmployee(String)
+}
+interface org.revature.data.TicketDao {
+~ Ticket insertTicket(Ticket)
+~ List<Ticket> getById(int)
+~ Ticket getByTicketId(int)
+~ List<Ticket> getByTicketStatus(String,int)
+~ List<Ticket> viewAll()
+~ Ticket updateTicket(Ticket)
+}
+class org.revature.data.TicketDaoImpl {
+~ Connection connection
++ Ticket insertTicket(Ticket)
++ List<Ticket> viewAll()
++ List<Ticket> getById(int)
++ Ticket getByTicketId(int)
++ List<Ticket> getByTicketStatus(String,int)
++ Ticket updateTicket(Ticket)
+}
+
+
+org.revature.data.EmployeeDao <|.. org.revature.data.EmployeeDaoImpl
+org.revature.data.TicketDao <|.. org.revature.data.TicketDaoImpl
+@enduml

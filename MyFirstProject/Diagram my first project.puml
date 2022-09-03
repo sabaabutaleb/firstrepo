@@ -1,0 +1,23 @@
+@startuml
+class org.revature.controller.EmployeeServlet {
+# void doGet(HttpServletRequest,HttpServletResponse)
+# void doPost(HttpServletRequest,HttpServletResponse)
+}
+class org.revature.controller.ManagerServlet {
+# void doGet(HttpServletRequest,HttpServletResponse)
+# void doPut(HttpServletRequest,HttpServletResponse)
+}
+class org.revature.controller.TicketServlet {
+# void doPost(HttpServletRequest,HttpServletResponse)
+# void doGet(HttpServletRequest,HttpServletResponse)
+}
+class org.revature.controller.EmployeeCommandLineInterface {
++ {static} void menu()
++ {static} void printOptions()
+}
+
+
+org.revature.controller.HttpServlet <|-- org.revature.controller.EmployeeServlet
+javax.servlet.http.HttpServlet <|-- org.revature.controller.ManagerServlet
+javax.servlet.http.HttpServlet <|-- org.revature.controller.TicketServlet
+@enduml

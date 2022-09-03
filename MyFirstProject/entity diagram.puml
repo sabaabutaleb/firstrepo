@@ -1,0 +1,41 @@
+@startuml
+class org.revature.entity.Ticket {
+- int id
+- double amount
+- String description
+- String status
+- int employeeIdFK
++ int getId()
++ void setId(int)
++ double getAmount()
++ void setAmount(double)
++ String getDescription()
++ void setDescription(String)
++ String getStatus()
++ void setStatus(String)
++ int getEmployeeIdFK()
++ void setEmployeeIdFK(int)
++ String toString()
+}
+class org.revature.entity.Employee {
+~ int id
+~ String firstname
+~ String lastname
+~ String occupation
+~ String username
+~ String password
++ int getId()
++ void setId(int)
++ String getFirstname()
++ void setFirstname(String)
++ String getLastname()
++ void setLastname(String)
++ String getOccupation()
++ void setOccupation(String)
++ String getUsername()
++ void setUsername(String)
++ String getPassword()
++ void setPassword(String)
++ String toString()
+}
+@enduml
